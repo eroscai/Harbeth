@@ -19,7 +19,7 @@ extension C7Color: C7Compatible {
                 alpha: 1.0)
     }()
     
-    public convenience init(hex: Int) {
+    convenience init(hex: Int) {
         let mask = 0xFF
         let r = CGFloat((hex >> 16) & mask) / 255
         let g = CGFloat((hex >> 8) & mask) / 255
@@ -27,7 +27,7 @@ extension C7Color: C7Compatible {
         self.init(red: r, green: g, blue: b, alpha: 1)
     }
     
-    public convenience init(hex: String) {
+    convenience init(hex: String) {
         let input = hex.replacingOccurrences(of: "#", with: "").uppercased()
         var a: CGFloat = 1.0, r: CGFloat = 0.0, b: CGFloat = 0.0, g: CGFloat = 0.0
         func colorComponent(from string: String, start: Int, length: Int) -> CGFloat {
